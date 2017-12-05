@@ -1,20 +1,21 @@
 pipeline {
-    agent any
-    stages{
-        stage('checkout'){
-    steps{
-    sh 'git checkout veridic/rcparimala'
-    }
-    }
-        stage('Build') {
-            steps {
-                sh 'echo "Task accomplished"'
-                }
-              }
-         stage('Deploy'){
-            steps{
-              sh 'echo "deploy"'
-             }
-            }
+   agent any 
+
+   stages {
+       stage('Checkout') {
+           steps {
+              echo "Checked out"
+           }
        }
+       stage('Build'){
+           steps {
+               echo "Trigger build"
+           }
+       }
+       stage('Deploy') {
+           steps {
+               echo "Pipeline deployed"
+           }
+       }
+   }
 }
